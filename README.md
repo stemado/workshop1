@@ -1,0 +1,95 @@
+#Developer Workshop
+##Using Node.js and MongoDB
+######Presented on March 26, 2014
+######Hosted by the Hallmark Digital Innovation Lab 
+######Presented by Dywayne Johnson - Software Engineering & Development
+######Email: djohnsonkc@gmail.com
+
+Agenda
+--------------
+
+In today’s workshop, we’ll use Node.js to build a simple Web app that serves web pages, exposes a REST API and persists data to a MongoDB database - all in the cloud. For the web pages, we’ll use a simple HTML template and jQuery to make AJAX calls to our REST API. We’ll create a source code repository at GitHub.com and we’ll use Git to push changes to our source code repository. We’ll also use Git to deploy our app to Heroku, which will make our app publically accessible in the cloud. 
+
+Preparation
+--------------
+
+- Create a free user account at GitHub.com (for source control) 
+- Create a free user account at MongoHQ.com (for a database) 
+- Create a free user account at Heroku.com (for hosting our app)
+- Install Node.js (http://http://nodejs.org)
+- Install Git (http://git-scm.com/downloads)
+- If using Windows, TortoiseGit is an additional tool that you can use to enable easy right-click features to check in your code and push it to your repository: https://code.google.com/p/tortoisegit/
+
+
+Create a MongoDB database
+--------------
+
+- At MongoHQ.com, create a new database called “workshop1”
+- Add a new user to our database (Admin, Users tab)
+
+Setting up our local project workspace
+--------------
+
+We’ll use Git to create a local copy of a repository on GitHub. This will provide a fully functional example of the project that will run locally and we can start with and make enhancements to.
+
+- Create a local project directory as our workspace - C:\sites\node.js\
+- Create a fork of https://github.com/djohnsonkc/workshop.git (for more info on forking see: https://help.github.com/articles/fork-a-repo)
+- Git clone https://github.com/your-username/workshop1.git. This will create a new workshop1 folder with the source code.
+- Install Node modules (npm install express, npm install mongoose, npm install moment). Note, this will create a /node_modules directory within your project workspace. Note, these are not included in the repository as they can always be easily reinstalled locally.
+
+
+Now, let’s open the source code and start writing some of our own code!
+--------------
+
+More info coming soon! This is where we'll make enhancements to the project, test the changes locally and check the changes into a new branch/fork of the repository. 
+
+1. Making changes to our app and testing them locally 
+	- change config/database.js to correct MongoHQ account
+2. Committing our changes to our GitHub repository using Git commands
+3. Deploying our app to Heroku using Git commands
+
+
+Our app will serve these web pages (with SEO-friendly URLS)
+--------------
+
+- http://localhost:3000/  
+- http://localhost:3000/register
+- http://localhost:3000/login
+- http://localhost:3000/api-demo
+
+Our app will serve these API endpoints
+--------------
+
+- GET /v1/accounts/ 
+- GET /v1/accounts/:id 
+- POST /v1/accounts/
+- PUT /v1/accounts/:id
+- DELETE /v1/accounts/:id
+
+You can access these endpoints from your browser (since they respond to GET requests). The POST, PUT and DELETE endpoints must be called from script
+
+- http://localhost:3000/v1/accounts
+- http://localhost:3000/v1/accounts/{some id here}
+
+
+
+Suggestions for Continued Learning After the Workshop
+--------------
+
+- Using a Heroku environment variable for our MongoHQ connection string so that it isn't managed in our code
+- Adding unit tests for the Node.js app is an area of importance. There are many choices for unit testing tools. Mocha seems to be a popular Node module
+- AngularJS is becoming a popular framework for client-side development, and supports unit testing (http://angularjs.org/). Follow the tutorial under Learn/Tutorial. This may be covered in our next workshop.
+- Try other Node modules (tip: delete your Procfile and run "npm init" to recreate it and include new node module references)
+- Improve on the password one-way hash by adding salt (we do this so that we obfuscate the password as much as possible to help prevent a hacker from obtaining account holder passwords)
+- Check out Yeoman.io (http://yeoman.io/) for app scaffolding
+
+
+Topics for our next workshop
+--------------
+
+- Use ejs and ejs-locals Node modules to create HTML templates that allow us to easily share common headers and footers
+- Replace jQuery AJAX calls and DOM manipulation with AngularJS
+- Add salt to our password hash
+
+
+

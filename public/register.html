@@ -1,0 +1,185 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+
+Name       : LawnLike 
+Description: A two-column, fixed-width design with dark color scheme.
+Version    : 1.0
+Released   : 20131202
+
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Account API</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
+<link href="/styles/default.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/styles/fonts.css" rel="stylesheet" type="text/css" media="all" />
+
+<!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
+
+</head>
+<body>
+<div id="header-wrapper">
+	<div id="header" class="container">
+		<div id="logo">
+			<h1><span class="fa fa-bolt"></span><a href="/">Workshop1</a></h1>
+		</div>
+		<div id="menu">
+			<ul>
+				<li><a href="/" accesskey="1" title="">Homepage</a></li>
+				<li class="current_page_item"><a href="/register" accesskey="2" title="">Register</a></li>
+				<li><a href="/login" accesskey="2" title="">Login</a></li>
+                <li><a href="/api-demo" accesskey="3" title="">API</a></li>
+				<!--<li><a href="families_api.html" accesskey="4" title="">Families</a></li>-->
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div id="wrapper">
+	<div id="featured-wrapper">
+		<div id="featured" class="extra2 margin-btm container">
+				<div class="main-title">
+					<h2>Account Registration</h2>
+					<span class="byline">Use the form below to create a new account using the REST API</span> 
+					<p>The Account collection contains a user's account credentials and profile information.</p>
+				</div>
+	
+				<div class="ebox1">
+					
+
+            
+	            	<div  style='text-align:left;margin-left: 110px;'>
+	            		
+	            		<p><span class="byline">Refer to the JSON results to see the server-side validation messages that can be displayed by the client.</span> </p>
+	            		
+	            		<p>
+						<label for="first_name">*First Name</label>
+						<input type="text" id='first_name' style='width: 250px;' value='John' /></label></p>
+						<p>
+						<label for="last_name">*Last name<br>
+						<input type="text" id='last_name' style='width: 250px;' value='Smith' /></label></p>						
+						<p>
+						<label for="email">*Email<br>
+						<input type="text" id='email' style='width: 250px;' value='jsmith12@gmail.com' /></label></p>
+						<p>
+						<label for="user_name">*User name<br>
+						<input type="text" id='user_name' style='width: 250px;' value='jsmith12' /></label></p>
+						<p>
+						<label for="password">*Password<br>
+						<input type="text" id='password' style='width: 250px;' value='1234' /></label></p>
+						<a id='post-link' class="button" href='javascript:'>Register</a>
+										    
+					</div>
+									    
+				</div>
+				<div>
+					<div class="title">
+						<h2>See the API response below</h2>
+					</div>
+
+		            <pre id="json-result">
+		            	
+		            </pre>
+
+				</div>
+
+
+		</div>
+
+	</div>
+</div>
+<div id="copyright" class="container">
+	<p>Copyright (c) 2013 Sitename.com. All rights reserved. | Photos by <a href="http://fotogrph.com/">Fotogrph</a> | Design by <a href="http://www.freecsstemplates.org/" rel="nofollow">FreeCSSTemplates.org</a>.</p>
+</div>
+</body>
+
+<script type="text/javascript" src="scripts/libs/jquery-1.9.1.js"></script>
+<script type="text/javascript">
+
+
+$("#post-link").click(function (e) {
+    e.preventDefault();
+    postRequest();
+});
+
+
+
+function postRequest() {
+
+    var data = JSON.stringify(
+
+            {
+                "first_name": $("#first_name").val(),
+                "last_name": $("#last_name").val(),
+                "email": $("#email").val(),
+                "user_name": $("#user_name").val(),
+                "password": $("#password").val()
+
+            }
+
+    );
+
+
+    var request = $.ajax({
+        url: '/v1/accounts/register/',
+        type: "POST",
+        data: data,
+        dataType: "json",
+        contentType: "application/json; charset=utf-8",
+        success: function (data) {
+            //alert("SUCCESS: " + JSON.stringify(data));
+            $("#json-result").html(syntaxHighlight(JSON.stringify(data, undefined, 4)));
+            
+            //$("#msg").html("Use the id property to test the GET, PUT and DELETE methods");
+            
+            $("#id").val(data.account_id);
+
+        },
+        error: function (xhr, ajaxOptions, thrownError) {
+        	
+            //console.log("ERROR: " + JSON.stringify(xhr));
+            //alert("ERROR: " + xhr.status);
+            //$("#json-result").html(syntaxHighlight(JSON.stringify(xhr, undefined, 4)));
+            //instead of showing the HTTP status, show the API's actual response that rides inside of the xhr.responseText
+			$("#json-result").html(syntaxHighlight(JSON.parse(xhr.responseText)));
+
+        }
+    });
+
+}
+
+
+
+function syntaxHighlight(json) {
+    if (typeof json != 'string') {
+        json = JSON.stringify(json, undefined, 2);
+    }
+    json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function (match) {
+        var cls = 'number';
+        if (/^"/.test(match)) {
+            if (/:$/.test(match)) {
+                cls = 'key';
+            } else {
+                cls = 'string';
+            }
+        } else if (/true|false/.test(match)) {
+            cls = 'boolean';
+        } else if (/null/.test(match)) {
+            cls = 'null';
+        }
+        return '<span class="' + cls + '">' + match + '</span>';
+    });
+}
+
+
+</script>
+
+
+</html>
