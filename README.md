@@ -33,7 +33,7 @@ Setting up our local project workspace
 We’ll use Git to create a local copy of a repository on GitHub. This will provide a fully functional example of the project that will run locally and we can start with and make enhancements to.
 
 - Create a local project directory as our workspace - C:\sites\node.js\
-- Create a fork of https://github.com/djohnsonkc/workshop.git (for more info on forking see: https://help.github.com/articles/fork-a-repo)
+- Create a fork of https://github.com/djohnsonkc/workshop1 (for more info on forking see: https://help.github.com/articles/fork-a-repo)
 - Git clone https://github.com/your-username/workshop1.git. This will create a new workshop1 folder with the source code.
 - Install Node modules (npm install express, npm install mongoose, npm install moment). Note, this will create a /node_modules directory within your project workspace. Note, these are not included in the repository as they can always be easily reinstalled locally.
 
@@ -66,7 +66,7 @@ Our app will serve these API endpoints
 - PUT /v1/accounts/:id
 - DELETE /v1/accounts/:id
 
-You can access these endpoints from your browser (since they respond to GET requests). The POST, PUT and DELETE endpoints must be called from script
+You can access these endpoints from your browser (since they respond to GET requests). The POST, PUT and DELETE endpoints must be called from script. We'll explore the use of jQuery for POST, PUT and DELETE in this workshop.
 
 - http://localhost:3000/v1/accounts
 - http://localhost:3000/v1/accounts/{some id here}
@@ -78,7 +78,7 @@ Suggestions for Continued Learning After the Workshop
 
 - Using a Heroku environment variable for our MongoHQ connection string so that it isn't managed in our code
 - Adding unit tests for the Node.js app is an area of importance. There are many choices for unit testing tools. Mocha seems to be a popular Node module
-- AngularJS is becoming a popular framework for client-side development, and supports unit testing (http://angularjs.org/). Follow the tutorial under Learn/Tutorial. This may be covered in our next workshop.
+- AngularJS is becoming a popular framework for front-end development, and supports unit testing (http://angularjs.org/). Follow the tutorial under Learn/Tutorial. This may be covered in our next workshop.
 - Try other Node modules (tip: delete your Procfile and run "npm init" to recreate it and include new node module references)
 - Improve on the password one-way hash by adding salt (we do this so that we obfuscate the password as much as possible to help prevent a hacker from obtaining account holder passwords)
 - Check out Yeoman.io (http://yeoman.io/) for app scaffolding
