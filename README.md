@@ -37,6 +37,20 @@ We’ll use Git to create a local copy of a repository on GitHub. This will prov
 - Git clone https://github.com/your-username/workshop1.git. This will create a new workshop1 folder with the source code.
 - Install Node modules (npm install express, npm install mongoose, npm install moment). Note, this will create a /node_modules directory within your project workspace. Note, these are not included in the repository as they can always be easily reinstalled locally.
 
+Things that we will be discussing (not necessarily in this order)
+--------------
+
+- Configuring our app to connect to our MongoDB database
+- Using models in our app
+- Creating our own reusable library functions
+- Using constants in our app
+- Setting up our public directory for pages and other publicly-accessible assets
+- Generating a Profile file for Heroku
+- Generating a package.json file for Heroku 
+- What the heck is this-project-command-prompt.bat?
+- Putting it all together with server.js
+- Using third-party Node modules
+
 
 Now, let’s open the source code and start writing some of our own code!
 --------------
