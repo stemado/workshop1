@@ -41,7 +41,7 @@ Things that we will be discussing (not necessarily in this order)
 --------------
 
 - Configuring our app to connect to our MongoDB database
-- Using models in our app
+- Using models in our app as well as the MVC (model-view-controller) design pattern
 - Creating our own reusable library functions
 - Using constants in our app
 - Setting up our public directory for pages and other publicly-accessible assets
