@@ -101,7 +101,7 @@ Topics for our next workshop
 --------------
 
 - Use ejs and ejs-locals Node modules to create HTML templates that allow us to easily share common layouts and partials (i.e. common headers, footers)
-- Use of JWTs (pronounced "jots") to secure your API endpoints using JSON Web Tokens (npm install jwt-simple)
+- Use of JWTs (pronounced "jots") to secure your API endpoints using JSON Web Tokens
 - Replace jQuery AJAX calls and DOM manipulation with AngularJS
 - Add salt to our password hash
 - Demo using Postman to test API methods locally
