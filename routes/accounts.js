@@ -18,7 +18,8 @@ exports.register = function (req, res) {
         else if (data == null) {
 
             var _now = new Date();
-            var _expires = _now.setDate(_now + 365);
+
+            console.log("_now: " + _now);
 
             var account_data = {
                 first_name: req.body.first_name,
@@ -27,8 +28,7 @@ exports.register = function (req, res) {
                 password: utils.passwordHash(req.body.password),
                 emails: [{ address: req.body.email, primary: true, created_at: _now, updated_at: _now }],
                 created_at: _now,
-                updated_at: _now,
-                expires_at: _expires
+                updated_at: _now
                 
             };
 

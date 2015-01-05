@@ -73,11 +73,18 @@ Our app will serve these web pages (with SEO-friendly URLS)
 Our app will serve these REST API methods/endpoints
 --------------
 
+
+These API endpoints provide a way to POST user credentials 
+- POST /v1/accounts/register
+- POST /v1/accounts/login
+
+These are the more common CRUD methods (note: POST /v1/accounts is replaced by /v1/accounts/register)
 - GET /v1/accounts/ 
 - GET /v1/accounts/:id 
-- POST /v1/accounts/
 - PUT /v1/accounts/:id
 - DELETE /v1/accounts/:id
+
+
 
 You can access these endpoints from your browser (since they respond to GET requests). The POST, PUT and DELETE endpoints must be called from script. The Google Chrome extension "Postman - REST Client" may become your best friend for testing API methods locally. We'll explore the use of jQuery for POST, PUT and DELETE in this workshop.
 
