@@ -10,7 +10,10 @@ exports.register = function (req, res) {
 
     Account.findOne({ user_name: req.body.user_name }, function (err, data) {
         if (err) {
-            res.json(err);
+            res.json(500, { status: 500, message: "Error", error: err });
+        }
+        else if (data != null ) {
+            res.send(400, { status: 400, message: 'Bad Request', errors: { user_name: ['has already been taken'] } });
         }
         else if (data == null) {
 
@@ -43,9 +46,7 @@ exports.register = function (req, res) {
                 });
 
         }
-        else {
-            res.send(400, { status: 400, message: 'Bad Request', errors: { user_name: ['has already been taken'] } });
-        }
+
     });
 };
 

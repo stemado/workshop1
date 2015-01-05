@@ -28,7 +28,7 @@ app.get('/login', function (req, res) {
     res.sendfile('public/login.html');
 });
 app.get('/api-demo', function (req, res) {
-    res.sendfile('public/accounts-api.html');
+    res.sendfile('public/api-demo.html');
 });
 
 //**************************************************************************************
@@ -39,7 +39,7 @@ app.post('/v1/accounts/login', accounts.login);
 //account CRUD routes
 app.get('/v1/accounts', accounts.getAll);
 app.get('/v1/accounts/:id', accounts.getById);
-//app.post('/v1/accounts', accounts.add);
+//app.post('/v1/accounts', accounts.add); //this is addressed by /accounts/register
 app.put('/v1/accounts/:id', accounts.update);
 app.delete('/v1/accounts/:id', accounts.delete);
 
