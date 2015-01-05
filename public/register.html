@@ -155,7 +155,7 @@
 
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 
-					<div class="title">
+					<div class="title js-scroll-top">
 						<h2>See the API response below</h2>
                         <p><strong>PLEASE NOTE:</strong> this API method is returning more than it should when a new account is created - such as password, etc., but is there for demonstration purposes</p>
 					</div>
@@ -221,6 +221,10 @@ function postRequest() {
             
             $("#id").val(data.account_id);
 
+            $('html, body').animate({
+                    scrollTop: $(".js-scroll-top").offset().top
+                }, 1000);
+
         },
         error: function (xhr, ajaxOptions, thrownError) {
         	
@@ -230,8 +234,14 @@ function postRequest() {
             //instead of showing the HTTP status, show the API's actual response that rides inside of the xhr.responseText
 			$("#json-result").html(syntaxHighlight(JSON.parse(xhr.responseText)));
 
+            $('html, body').animate({
+                    scrollTop: $(".js-scroll-top").offset().top
+                }, 1000);
+
         }
     });
+
+
 
 }
 

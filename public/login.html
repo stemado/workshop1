@@ -123,7 +123,7 @@
 
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 
-					<div class="title">
+					<div class="title js-scroll-top">
 						<h2>See the API response below</h2>
 					</div>
 
@@ -185,6 +185,10 @@ function postRequest() {
             
             //$("#id").val(data.account_id);
 
+            $('html, body').animate({
+                    scrollTop: $(".js-scroll-top").offset().top
+                }, 1000);
+
         },
         error: function (xhr, ajaxOptions, thrownError) {
         	
@@ -193,6 +197,10 @@ function postRequest() {
             //$("#json-result").html(syntaxHighlight(JSON.stringify(xhr, undefined, 4)));
             //instead of showing the HTTP status, show the API's actual response that rides inside of the xhr.responseText
 			$("#json-result").html(syntaxHighlight(JSON.parse(xhr.responseText)));
+
+            $('html, body').animate({
+                    scrollTop: $(".js-scroll-top").offset().top
+                }, 1000);
 
         }
     });

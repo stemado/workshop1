@@ -160,7 +160,7 @@
 
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 
-                    <div class="title">
+                    <div class="title js-scroll-top">
                         <h2>See the API response below</h2>
                     </div>
 
@@ -230,6 +230,7 @@ function getAllRequest() {
             $("#first_name").val(data[0].first_name);
             $("#last_name").val(data[0].last_name);
             
+
         },
         error: function (xhr, ajaxOptions, thrownError) {
             //alert("ERROR: " + JSON.stringify(xhr));
@@ -237,6 +238,11 @@ function getAllRequest() {
             $("#json-result").html(syntaxHighlight(JSON.stringify(xhr.status, undefined, 4)));
         }
     });
+
+    $('html, body').animate({
+            scrollTop: $(".js-scroll-top").offset().top
+        }, 1000);
+
 }
 
 function getSpecificRequest(objectid) {
@@ -255,6 +261,7 @@ function getSpecificRequest(objectid) {
             $("#password").val(data.password);
             $("#first_name").val(data.first_name);
             $("#last_name").val(data.last_name);
+
         },
         error: function (xhr, ajaxOptions, thrownError) {
             //alert("ERROR: " + JSON.stringify(xhr));
@@ -265,6 +272,11 @@ function getSpecificRequest(objectid) {
             $("#json-result").html(syntaxHighlight(JSON.stringify(xhr.status, undefined, 4)));
         }
     });
+
+    $('html, body').animate({
+            scrollTop: $(".js-scroll-top").offset().top
+        }, 1000);
+
 }
 
 //this is handled by /v1/accounts/register and the /register page
@@ -340,6 +352,7 @@ function putRequest(objectid) {
         success: function (data) {
             //alert("SUCCESS: " + JSON.stringify(data));
             $("#json-result").html(syntaxHighlight(JSON.stringify(data, undefined, 4)));
+
         },
         error: function (xhr, ajaxOptions, thrownError) {
             //alert("ERROR: " + JSON.stringify(xhr));
@@ -360,6 +373,11 @@ function putRequest(objectid) {
      alert("Request failed: " + textStatus);
      });
      */
+
+    $('html, body').animate({
+            scrollTop: $(".js-scroll-top").offset().top
+        }, 1000);
+
 }
 
 
@@ -373,6 +391,7 @@ function deleteRequest(objectid) {
             //alert("SUCCESS: " + JSON.stringify(data));
             $("#json-result").html(syntaxHighlight(JSON.stringify(data, undefined, 4)));
 
+
         },
         error: function (xhr, ajaxOptions, thrownError) {
             //alert("ERROR: " + JSON.stringify(xhr));
@@ -385,6 +404,9 @@ function deleteRequest(objectid) {
     });
 
 
+    $('html, body').animate({
+            scrollTop: $(".js-scroll-top").offset().top
+        }, 1000);
 
 }
 

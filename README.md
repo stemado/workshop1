@@ -104,15 +104,16 @@ Suggestions for Continued Learning After the Workshop
 - Check out Yeoman.io (http://yeoman.io/) for app scaffolding
 
 
-Topics for our next workshop
+Topics for our next workshop(s)
 --------------
 
 - Use ejs and ejs-locals Node modules to create HTML templates that allow us to easily share common layouts and partials (i.e. common headers, footers)
-- Use of JWTs (pronounced "jots") to secure your API endpoints using JSON Web Tokens
+- Use of JWTs (pronounced "jots") to secure your API endpoints and data using JSON Web Tokens
 - Replace jQuery AJAX calls and DOM manipulation with AngularJS
 - Add salt to our password hash
 - Demo using Postman to test API methods locally
 - Use of free SSL provided by Heroku to secure my app using https as well as SSL adon-ons provided by Heroku to secure my own domain.
+- Use of Apigee to proxy our API endpoints (security, throttling, etc.)
 
 
 
