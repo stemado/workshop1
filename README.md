@@ -2,13 +2,13 @@
 ##Using Node.js and MongoDB
 ######Presented on March 26, 2014
 ######Hosted by the Hallmark Digital Innovation Lab 
-######Presented by Dywayne Johnson - Software Engineering & Development
+######Presented by Dywayne Johnson - Full Stack Software Engineer, Web Developer, Prototyper
 ######Email: djohnsonkc@gmail.com
 
 Agenda
 --------------
 
-In today’s workshop, we’ll use Node.js to build a simple Web app that serves web pages, exposes a REST API and persists data to a MongoDB database - all in the cloud, all for free! For the web pages, we’ll use a simple HTML template and jQuery to make AJAX calls to our REST API. We’ll create a source code repository at GitHub.com and we’ll use Git to push changes to our source code repository. We’ll also use Git to deploy our app to Heroku, which will make our app publically accessible in the cloud. 
+In today’s workshop, we’ll use Node to build a simple Web app that serves web pages, exposes a REST API and persists data to a MongoDB database - all in the cloud, all for free! For the web pages, we’ll use a simple HTML template and jQuery to make AJAX calls to our REST API. We’ll create a source code repository at GitHub.com and we’ll use Git to push changes to our source code repository. We’ll also use Git to deploy our app to Heroku, which will make our app publicly accessible in the cloud. 
 
 Preparation
 --------------

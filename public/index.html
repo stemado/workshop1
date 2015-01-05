@@ -1,62 +1,88 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<!--
-Design by Free CSS Templates
-http://www.freecsstemplates.org
-Released for free under a Creative Commons Attribution 2.5 License
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
 
-Name       : LawnLike 
-Description: A two-column, fixed-width design with dark color scheme.
-Version    : 1.0
-Released   : 20131202
+    <title>Workshop 1</title>
 
--->
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title></title>
-<meta name="keywords" content="" />
-<meta name="description" content="" />
-<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
-<link href="/styles/default.css" rel="stylesheet" type="text/css" media="all" />
-<link href="/styles/fonts.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- Bootstrap core CSS -->
+    <link href="/styles/bootstrap.min.css" rel="stylesheet">
 
-<!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
+    <!-- Custom styles for this template -->
+    <link href="/styles/cover.css" rel="stylesheet">
 
-</head>
-<body>
-<div id="header-wrapper">
-	<div id="header" class="container">
-		<div id="logo">
-			<h1><span class="fa fa-bolt"></span><a href="/">Workshop1</a></h1>
-		</div>
-		<div id="menu">
-			<ul>
-				<li class="current_page_item"><a href="/" accesskey="1" title="">Homepage</a></li>
-				<li><a href="/register" accesskey="2" title="">Register</a></li>
-				<li><a href="/login" accesskey="2" title="">Login</a></li>
-				<li><a href="/api-demo" accesskey="3" title="">API</a></li>
-				<!--<li><a href="families_api.html" accesskey="4" title="">Families</a></li>-->
-			</ul>
-		</div>
-	</div>
-</div>
-<div id="header-featured">
-	<div id="banner-wrapper">
-		<div id="banner" class="container">
-			<h2>Developer Workshop - Using Node.js and MongoDB
-</h2>
-			<p>This prototype uses Node.js with express, mongoose and moment Node modules. This app provides a REST API and various methods to persist data to MongoDB.</p>
-			<a href="/register" class="button">Register</a>
-			
-			<a href="/login" class="button">Login</a>
-			
+    <!-- this is where we override bootstrap.min.css and cover.css as needed -->
+    <link href="/styles/custom.css" rel="stylesheet">
 
-		</div>
-	</div>
-</div>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
-<div id="copyright" class="container">
-	<p>Copyright (c) 2013 Sitename.com. All rights reserved. | Photos by <a href="http://fotogrph.com/">Fotogrph</a> | Design by <a href="http://www.freecsstemplates.org/" rel="nofollow">FreeCSSTemplates.org</a>.</p>
-</div>
-</body>
+
+
+  </head>
+
+  <body>
+
+    <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand">Developer Workshop 1</h3>
+              <nav>
+                <ul class="nav masthead-nav">
+                  <li class="active"><a href="/">Home</a></li>
+                  <li><a href="/register">Register</a></li>
+                  <li><a href="/login">Login</a></li>
+                  <li><a href="/api-demo">API</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+
+          <div class="inner cover">
+
+
+
+
+            <h2>Building a responsive web app and API with Node.js and MongoDB</h2>
+            <br>
+            <p class="lead">This prototype uses Node.js, with various Node modules, Bootstrap and MongoDB to provide a web app with a simple UI as well as a REST API with various methods that will allow us to persist data to MongoDB and retrieve it.</p>
+
+            <br>
+            <p class="lead">
+              <a href="https://github.com/djohnsonkc/workshop1" class="btn btn-lg btn-default">Learn more</a>
+            </p>
+
+          </div>
+
+          <div class="mastfoot">
+            <div class="inner">
+              <p>Cover template for <a href="http://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <script src="/scripts/libs/jquery-2.1.1.min.js"></script>
+    <script src="/scripts/libs/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/scripts/libs/ie10-viewport-bug-workaround.js"></script>
+  </body>
 </html>
