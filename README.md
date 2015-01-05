@@ -8,13 +8,13 @@
 Agenda
 --------------
 
-In today’s workshop, we’ll use Node.js to build a simple Web app that serves web pages, exposes a REST API and persists data to a MongoDB database - all in the cloud. For the web pages, we’ll use a simple HTML template and jQuery to make AJAX calls to our REST API. We’ll create a source code repository at GitHub.com and we’ll use Git to push changes to our source code repository. We’ll also use Git to deploy our app to Heroku, which will make our app publically accessible in the cloud. 
+In today’s workshop, we’ll use Node.js to build a simple Web app that serves web pages, exposes a REST API and persists data to a MongoDB database - all in the cloud, all for free! For the web pages, we’ll use a simple HTML template and jQuery to make AJAX calls to our REST API. We’ll create a source code repository at GitHub.com and we’ll use Git to push changes to our source code repository. We’ll also use Git to deploy our app to Heroku, which will make our app publically accessible in the cloud. 
 
 Preparation
 --------------
 
 - Create a free user account at GitHub.com (for source control) 
-- Create a free user account at MongoHQ.com (for a database) 
+- Create a free user account at Compose.io (for hosting our MongoDB database) 
 - Create a free user account at Heroku.com (for hosting our app)
 - Install Node.js (http://http://nodejs.org)
 - Install Git (http://git-scm.com/downloads)
@@ -24,7 +24,7 @@ Preparation
 Create a MongoDB database
 --------------
 
-- At MongoHQ.com, create a new database called “workshop1”
+- At Compose.io, create a new database called “workshop1”
 - Add a new user to our database (Admin, Users tab)
 
 Setting up our local project workspace
@@ -32,10 +32,10 @@ Setting up our local project workspace
 
 We’ll use Git to create a local copy of a repository on GitHub. This will provide a fully functional example of the project that will run locally and we can start with and make enhancements to.
 
-- Create a local project directory as our workspace - C:\sites\node.js\
+- Create a local project directory as our workspace - (e.g. C:\sites\node.js for PC, documents/dev/nodejs for Mac)
 - Create a fork of https://github.com/djohnsonkc/workshop1 (for more info on forking see: https://help.github.com/articles/fork-a-repo)
 - Git clone https://github.com/your-username/workshop1.git. This will create a new workshop1 folder with the source code.
-- Install Node modules (npm install express, npm install mongoose, npm install moment). Note, this will create a /node_modules directory within your project workspace. Note, these are not included in the repository as they can always be easily reinstalled locally.
+- Install Node modules (npm install express, npm install mongoose, npm install moment). Note, this will create a /node_modules directory within your project workspace. These are not included in the repository as they can always be easily reinstalled locally (see .gitignore file in app root).
 
 Things that we will be discussing (not necessarily in this order)
 --------------
@@ -45,11 +45,10 @@ Things that we will be discussing (not necessarily in this order)
 - Creating our own reusable library functions
 - Using constants in our app
 - Setting up our public directory for pages and other publicly-accessible assets
-- Generating a Profile file for Heroku
-- Generating a package.json file for Heroku 
-- What the heck is this-project-command-prompt.bat?
-- Putting it all together with server.js
-- Using third-party Node modules
+- Generating a Procfile for deployment to Heroku
+- Generating a package.json file for deployment to Heroku 
+- Putting it all together with server.js (or app.js, depending on your preference)
+- Installing and using third-party Node modules
 
 
 Now, let’s open the source code and start writing some of our own code!
@@ -71,7 +70,7 @@ Our app will serve these web pages (with SEO-friendly URLS)
 - http://localhost:3000/login
 - http://localhost:3000/api-demo
 
-Our app will serve these API endpoints
+Our app will serve these REST API methods/endpoints
 --------------
 
 - GET /v1/accounts/ 
@@ -80,7 +79,7 @@ Our app will serve these API endpoints
 - PUT /v1/accounts/:id
 - DELETE /v1/accounts/:id
 
-You can access these endpoints from your browser (since they respond to GET requests). The POST, PUT and DELETE endpoints must be called from script. We'll explore the use of jQuery for POST, PUT and DELETE in this workshop.
+You can access these endpoints from your browser (since they respond to GET requests). The POST, PUT and DELETE endpoints must be called from script. The Google Chrome extension "Postman - REST Client" may become your best friend for testing API methods locally. We'll explore the use of jQuery for POST, PUT and DELETE in this workshop.
 
 - http://localhost:3000/v1/accounts
 - http://localhost:3000/v1/accounts/{some id here}
@@ -101,9 +100,18 @@ Suggestions for Continued Learning After the Workshop
 Topics for our next workshop
 --------------
 
-- Use ejs and ejs-locals Node modules to create HTML templates that allow us to easily share common headers and footers
+- Use ejs and ejs-locals Node modules to create HTML templates that allow us to easily share common layouts and partials (i.e. common headers, footers)
+- Use of JWTs (pronounced "jots") to secure your API endpoints using JSON Web Tokens (npm install jwt-simple)
 - Replace jQuery AJAX calls and DOM manipulation with AngularJS
 - Add salt to our password hash
+- Demo using Postman to test API methods locally
+- Use of free SSL provided by Heroku to secure my app using https as well as SSL adon-ons provided by Heroku to secure my own domain.
+
+
+
+
+
+
 
 
 
