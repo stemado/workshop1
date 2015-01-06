@@ -40,17 +40,21 @@ We’ll use Git to create a local copy of a repository on GitHub. This will prov
 Things that we will be discussing (not necessarily in this order)
 --------------
 
+- How NoSQL, MongoDB in particular, differs from a relational database
 - Configuring our app to connect to our MongoDB database
 - Using models in our app as well as the MVC (model-view-controller) design pattern
+- Limiting the properties revealed in our models
 - MongoDB documents, nested child documents, indexing and more...
 - Creating our own reusable library functions
 - Using constants in our app
 - Setting up our public directory for pages and other publicly-accessible assets
 - Generating a Procfile for deployment to Heroku
 - Generating a package.json file for deployment to Heroku 
-- Putting it all together with app.js (or server.js, depending on your naming preference)
+- Putting it all together with app.js
 - Installing and using third-party Node modules
 - Use of console.log() for debugging
+- Server-side data validation using mongoose features
+
 
 
 Now, let’s open the source code and start writing some of our own code!
