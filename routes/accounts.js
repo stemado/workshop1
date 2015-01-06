@@ -138,7 +138,7 @@ exports.update = function (req, res) {
             account.last_name = req.body.last_name;
             account.emails[0].address = req.body.email;
             account.emails[0].updated_at = _now;
-            account.password = req.body.password;
+            account.password = utils.passwordHash(req.body.password);
             account.updated_at = _now;
             account.save(function (err, data) {
                 if (err) {
