@@ -16,7 +16,7 @@ var emailSchema = Schema({
 var accountSchema = Schema({
     first_name: { type: String, required: true, trim: true },
     last_name: { type: String, required: true, trim: true },
-    user_name: { type: String, index: true, trim: true, unique: true },     //INDEXED + UNIQUE
+    user_name: { type: String, required: true, index: true, trim: true, unique: true },     //INDEXED + UNIQUE
     password: { type: String, required: true, trim: true },
     emails: [emailSchema],
     created_at: { type: Date, default: Date.now },
