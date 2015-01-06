@@ -83,7 +83,7 @@ exports.getAll = function (req, res) {
     })
     //.skip(offset)
     //.limit(count)
-    //.select('_id first_name last_name')
+    .select('_id user_name first_name last_name emails._id emails.address emails.primary')
     //.where('some_attribute').equals(req.params.some_value)
     .sort({last_name: 'asc', first_name: 'asc'})
     .exec(function (err, docs) {
