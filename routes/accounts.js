@@ -142,6 +142,9 @@ exports.update = function (req, res) {
             account.emails[0].updated_at = _now;
             account.password = utils.passwordHash(req.body.password);
             account.updated_at = _now;
+
+            console.log("Updated Account: " + JSON.stringify(account));
+
             account.save(function (err, data) {
                 if (err) {
                     res.send(500, { status: 500, message: "Error", error: err } );
