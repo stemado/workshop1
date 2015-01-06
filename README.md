@@ -1,5 +1,5 @@
 #Developer Workshop 1
-##Building a responsive web app and a REST API with Node.js and MongoDB
+##Building a responsive web app and a RESTful API with Node.js and MongoDB
 ######Presented on March 26, 2014
 ######Hosted by the Hallmark Digital Innovation Lab 
 ######Presented by Dywayne Johnson - Full Stack Software Engineer, Web Developer, Prototyper
@@ -8,7 +8,7 @@
 Agenda
 --------------
 
-In this workshop, we’ll use Node to build a responsive, mobile-friendly Web app that serves web pages, exposes a REST API and persists data to a MongoDB database - all in the cloud, all for free! For the web pages, we’ll use a couple of Bootstrap themes and jQuery to make AJAX calls to our REST API. We’ll create a source code repository at GitHub.com and we’ll use Git to push changes to our source code repository. We’ll also use Git to deploy our app to Heroku, which will make our app publicly accessible in the cloud. For a working example of what we will be building, go to http://djohnsonkc-workshop1.herokuapp.com/
+In this workshop, we’ll use Node to build a responsive, mobile-friendly Web app that serves web pages, exposes a RESTful API and persists data to a MongoDB database - all in the cloud, all for free! For the web pages, we’ll use a couple of Bootstrap themes and jQuery to make AJAX calls to our RESTful API. We’ll create a source code repository at GitHub.com and we’ll use Git to push changes to our source code repository. We’ll also use Git to deploy our app to Heroku, which will make our app publicly accessible in the cloud. For a working example of what we will be building, go to http://djohnsonkc-workshop1.herokuapp.com/
 
 Preparation
 --------------
@@ -40,7 +40,7 @@ We’ll use Git to create a local copy of a repository on GitHub. This will prov
 Things that we will be discussing (not necessarily in this order)
 --------------
 
-- How NoSQL, MongoDB in particular, differs from a relational database
+
 - Configuring our app to connect to our MongoDB database
 - Using models in our app as well as the MVC (model-view-controller) design pattern
 - Limiting the properties revealed in our models
@@ -54,7 +54,8 @@ Things that we will be discussing (not necessarily in this order)
 - Installing and using third-party Node modules
 - Use of console.log() for debugging
 - Server-side data validation using mongoose features
-
+- REST as an architectural style/design pattern and HTTP verbs
+- How NoSQL, MongoDB in particular, differs from a relational database
 
 
 Now, let’s open the source code and start writing some of our own code!
@@ -76,7 +77,7 @@ Our app will serve these web pages (with SEO-friendly routes/URLS)
 - http://localhost:3000/login
 - http://localhost:3000/api-demo
 
-Our app will serve these REST API methods/endpoints
+Our app will serve these RESTful API methods/endpoints
 --------------
 
 These API endpoints provide a way to POST user credentials 
