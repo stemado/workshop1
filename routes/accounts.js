@@ -40,7 +40,7 @@ exports.register = function (req, res) {
                     }
                     else {                     
                         
-                        res.send(200, { status: 200, message: 'account created successfully', account_id: data._id, data: data });
+                        res.send(200, { status: 200, message: 'account created successfully', access_token: "coming soon..." });
 
                     }
                 });
@@ -59,11 +59,13 @@ exports.login = function (req, res) {
             res.send(500, { status: 500, message: "Error", error: err } );
         }
         else if (account == null) {
-            res.send(404, { status: 404, message: 'Not Found', details: 'account not found for user name and/or password' });
+            //res.send(404, { status: 404, message: 'Not Found', details: 'account not found for user name' });
+            //lets not reveal whether or not an account exists in our system for a specific user name
+            res.send(401, { status: 401, message: 'Unauthorized', details: 'invalid user name and/or password' });
         }
         else {
             if (account.password == utils.passwordHash(req.body.password)) {
-                res.send(200, { status: 200, message: 'login successful'});
+                res.send(200, { status: 200, message: 'login successful', access_token: "coming soon..." });
             }
             else {
                 res.send(401, { status: 401, message: 'Unauthorized', details: 'invalid user name and/or password' });
