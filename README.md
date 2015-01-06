@@ -1,5 +1,5 @@
-#Developer Workshop
-##Using Node.js and MongoDB
+#Developer Workshop 1
+##Building a responsive web app and a REST API with Node.js and MongoDB
 ######Presented on March 26, 2014
 ######Hosted by the Hallmark Digital Innovation Lab 
 ######Presented by Dywayne Johnson - Full Stack Software Engineer, Web Developer, Prototyper
