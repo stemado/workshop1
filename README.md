@@ -47,7 +47,7 @@ Things that we will be discussing (not necessarily in this order)
 - Setting up our public directory for pages and other publicly-accessible assets
 - Generating a Procfile for deployment to Heroku
 - Generating a package.json file for deployment to Heroku 
-- Putting it all together with server.js (or app.js, depending on your preference)
+- Putting it all together with app.js (or server.js, depending on your naming preference)
 - Installing and using third-party Node modules
 
 
