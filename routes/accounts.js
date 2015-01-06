@@ -34,9 +34,9 @@ exports.register = function (req, res) {
 
             var account = new Account(account_data);
                
-                account.save(function (error, data) {
-                    if (error) {
-                        res.json(error);
+                account.save(function (err, data) {
+                    if (err) {
+                        res.send(500, { status: 500, message: "Error", error: err } );
                     }
                     else {                     
                         
@@ -52,19 +52,21 @@ exports.register = function (req, res) {
 
 exports.login = function (req, res) {
 
-    Account.findOne({ user_name: req.body.user_name }, function (error, account) {
-        if (error) {
-            res.json(error);
+    console.log('Login: ' + JSON.stringify(req.body));
+
+    Account.findOne({ user_name: req.body.user_name }, function (err, account) {
+        if (err) {
+            res.send(500, { status: 500, message: "Error", error: err } );
         }
         else if (account == null) {
-            res.send(401, { error: 'Unauthorized', message: 'invalid user name and/or password' });
+            res.send(404, { status: 404, message: 'Not Found', details: 'account not found for user name and/or password' });
         }
         else {
             if (account.password == utils.passwordHash(req.body.password)) {
                 res.send(200, { status: 200, message: 'login successful'});
             }
             else {
-                res.send(401, { error: 'Unauthorized', message: 'invalid user name and/or password' });
+                res.send(401, { status: 401, message: 'Unauthorized', details: 'invalid user name and/or password' });
             }
         }
     });
@@ -79,7 +81,7 @@ exports.getAll = function (req, res) {
     })
     //.skip(offset)
     //.limit(count)
-    //.select(scope)
+    //.select('_id first_name last_name')
     //.where('some_attribute').equals(req.params.some_value)
     .sort({last_name: 'asc', first_name: 'asc'})
     .exec(function (err, docs) {
@@ -92,16 +94,16 @@ exports.getAll = function (req, res) {
 
 //example request /v1/accounts/:id
 exports.getById = function (req, res) {
-    var id = req.params.id;
-    console.log('Retrieving id: ' + id);
 
-    Account.findById(id, function (err, account) {
+    console.log('Retrieving id: ' + req.params.id);
+
+    Account.findById(req.params.id, function (err, account) {
 
         if (err) {
-            res.send(500, { code: 500, error: err });
+            res.send(500, { status: 500, message: "Error", error: err } );
         }
         else if (account == null) {
-            res.send(404, { code: 404, message: 'not found' });
+            res.send(404, { status: 404, message: 'not found' });
         }
         else {
             res.send(account);
@@ -121,26 +123,26 @@ exports.add = function (req, res) {
 
 exports.update = function (req, res) {
 
-    var id = req.params.id;
-    var obj = req.body;
+    console.log("Updating: " + JSON.stringify(req.body));
 
-    var model = new Account(req.body);
-
-    console.log('Updating password to ' + model.password + ' for ' + id);
-    console.log(JSON.stringify(obj));
-
-
-    Account.findById(id, function (err, account) {
+    Account.findById(req.params.id, function (err, account) {
         if (err) {
-
+            res.send(500, { status: 500, message: "Error", error: err } );
         }
         else {
+
+            var _now = new Date();
+
             //allow specific properties to be updated
-            account.password = model.password;
-            account.updated_at = new Date();
+            account.first_name = req.body.first_name;
+            account.last_name = req.body.last_name;
+            account.emails[0].address = req.body.email;
+            account.emails[0].updated_at = _now;
+            account.password = req.body.password;
+            account.updated_at = _now;
             account.save(function (err, data) {
                 if (err) {
-                    res.json(err);
+                    res.send(500, { status: 500, message: "Error", error: err } );
                 }
                 else {
 
@@ -163,7 +165,7 @@ exports.delete = function (req, res) {
         console.log('err: ' + err);
 
         if (err) {
-            res.send(500, { error: err });
+            res.send(500, { status: 500, message: "Error", error: err } );
         }
         else {
             res.send(200, { status: 200, message: 'delete successful' });

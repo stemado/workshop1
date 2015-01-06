@@ -5,7 +5,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var emailSchema = Schema({
-    address: { type: String, trim: true, unique: true },
+    address: { type: String, trim: true, unique: true }, //UNIQUE
     primary: { type: Boolean },
     created_at: { type: Date, default: Date.now },
     updated_at: { type: Date, default: Date.now }

@@ -162,6 +162,7 @@
 
                     <div class="title js-scroll-top">
                         <h2>See the API response below</h2>
+                        <p><strong>PLEASE NOTE:</strong> this API method is returning more than it should such as password, etc., but is there for demonstration purposes</p>
                     </div>
 
                     <pre id="json-result">
@@ -215,7 +216,7 @@ $("#delete-link").click(function (e) {
 
 function getAllRequest() {
     $.ajax({
-        url: '/v1/accounts/',
+        url: '/api/v1/accounts/',
         dataType: 'json',
         type: "GET",
         contentType: "application/json; charset=utf-8",
@@ -247,7 +248,7 @@ function getAllRequest() {
 
 function getSpecificRequest(objectid) {
     $.ajax({
-        url: '/v1/accounts/' + objectid,
+        url: '/api/v1/accounts/' + objectid,
         dataType: 'json',
         type: "GET",
         contentType: "application/json; charset=utf-8",
@@ -279,7 +280,7 @@ function getSpecificRequest(objectid) {
 
 }
 
-//this is handled by /v1/accounts/register and the /register page
+//this is handled by /api/v1/accounts/register and the /register page
 /*
 function postRequest() {
 
@@ -334,17 +335,17 @@ function putRequest(objectid) {
 
             {
 
-                "user_name": $("#user_name").val(),
-                "password": $("#password").val(),
                 "first_name": $("#first_name").val(),
                 "last_name": $("#last_name").val(),
-                "xyz": "1234"
+                "email": $("#email").val(),
+                "password": $("#password").val()
+
             }
 
     );
 
     var request = $.ajax({
-        url: '/v1/accounts/' + objectid,
+        url: '/api/v1/accounts/' + objectid,
         type: "PUT",
         data: data,
         dataType: "json",
@@ -384,7 +385,7 @@ function putRequest(objectid) {
 function deleteRequest(objectid) {
 
     var request = $.ajax({
-        url: '/v1/accounts/' + objectid,
+        url: '/api/v1/accounts/' + objectid,
         type: "DELETE",
         dataType: "json",
         success: function (data) {

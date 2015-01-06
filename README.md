@@ -42,6 +42,7 @@ Things that we will be discussing (not necessarily in this order)
 
 - Configuring our app to connect to our MongoDB database
 - Using models in our app as well as the MVC (model-view-controller) design pattern
+- MongoDB documents, nested child documents, indexing and more...
 - Creating our own reusable library functions
 - Using constants in our app
 - Setting up our public directory for pages and other publicly-accessible assets
@@ -49,6 +50,7 @@ Things that we will be discussing (not necessarily in this order)
 - Generating a package.json file for deployment to Heroku 
 - Putting it all together with app.js (or server.js, depending on your naming preference)
 - Installing and using third-party Node modules
+- Use of console.log() for debugging
 
 
 Now, let’s open the source code and start writing some of our own code!
@@ -62,7 +64,7 @@ More info coming soon! This is where we'll make enhancements to the project, tes
 3. Deploying our app to Heroku using Git commands
 
 
-Our app will serve these web pages (with SEO-friendly URLS)
+Our app will serve these web pages (with SEO-friendly routes/URLS)
 --------------
 
 - http://localhost:3000/  
@@ -73,23 +75,22 @@ Our app will serve these web pages (with SEO-friendly URLS)
 Our app will serve these REST API methods/endpoints
 --------------
 
-
 These API endpoints provide a way to POST user credentials 
-- POST /v1/accounts/register
-- POST /v1/accounts/login
+- POST /api/v1/accounts/register
+- POST /api/v1/accounts/login
 
-These are the more common CRUD methods (note: POST /v1/accounts is replaced by /v1/accounts/register)
-- GET /v1/accounts/ 
-- GET /v1/accounts/:id 
-- PUT /v1/accounts/:id
-- DELETE /v1/accounts/:id
+These are the more common CRUD methods (note: POST /v1/accounts is replaced by /api/v1/accounts/register)
+- GET /api/v1/accounts/ 
+- GET /api/v1/accounts/:id 
+- PUT /api/v1/accounts/:id
+- DELETE /api/v1/accounts/:id
 
 
 
 You can access these endpoints from your browser (since they respond to GET requests). The POST, PUT and DELETE endpoints must be called from script. The Google Chrome extension "Postman - REST Client" may become your best friend for testing API methods locally. We'll explore the use of jQuery for POST, PUT and DELETE in this workshop.
 
-- http://localhost:3000/v1/accounts
-- http://localhost:3000/v1/accounts/{some id here}
+- http://localhost:3000/api/v1/accounts
+- http://localhost:3000/api/v1/accounts/{some id here}
 
 
 
@@ -107,11 +108,12 @@ Suggestions for Continued Learning After the Workshop
 Topics for our next workshop(s)
 --------------
 
-- Use ejs and ejs-locals Node modules to create HTML templates that allow us to easily share common layouts and partials (i.e. common headers, footers)
-- Use of JWTs (pronounced "jots") to secure your API endpoints and data using JSON Web Tokens
+- Leverage other mongoose features such as limiting the collection properties that are returned (e.g. suppress password from API results)
+- Use ejs and ejs-locals Node modules to create HTML templates that allow us to share and reuse common layouts and partials (i.e. common headers, footers)
+- Use of JWTs (pronounced "jots") to secure your API endpoints and data using JSON Web Tokens. Return an access_token in our register and login API methods and require an access_token for subsequent API calls in order to protect our data.
 - Replace jQuery AJAX calls and DOM manipulation with AngularJS
 - Add salt to our password hash
-- Demo using Postman to test API methods locally
+- Using Postman to test API methods locally
 - Use of free SSL provided by Heroku to secure my app using https as well as SSL adon-ons provided by Heroku to secure my own domain.
 - Use of Apigee to proxy our API endpoints (security, throttling, etc.)
 
