@@ -17,7 +17,14 @@
     <!-- this is where we override bootstrap.min.css and cover.css as needed -->
     <link href="/themes/startbootstrap-bare-1.0.1/css/custom.css" rel="stylesheet">
 
+    <style>
 
+    .btn 
+    {
+        width: 200px;
+    }
+
+    </style>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -76,15 +83,14 @@
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 
 				<h2>Account API Methods</h2>
-				<p>Click the links below to test the HTTP methods for Get, Post, Put, Delete.</p> 
-
+				<p>Click the buttons below to test the RESTful API methods using HTTP GET, POST, PUT and DELETE verbs. For a more robust way of testing your API methods, check out the <a href="https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm" target="_blank">Postman - REST Client</a> for Google Chrome</p>
             
-                <p><button id='get-all-link' class="btn btn-success">GET v1/accounts</button></p>
-                <p><button id='get-specific-link' class="btn btn-success">GET v1/accounts/{id}</button></p>
-                <p><button id='put-link' class="btn btn-success">PUT v1/accounts/{id}</button></p>
-                <p><button id='delete-link' class="btn btn-success">DELETE v1/accounts/{id}</button></p>
+                <p><button id='get-all-link' class="btn btn-success">1) GET v1/accounts</button></p>
+                <p><button id='get-specific-link' class="btn btn-success">2) GET v1/accounts/{id}</button> <i class="glyphicon glyphicon-flash"></i></p>
+                <p><button id='put-link' class="btn btn-success">3) PUT v1/accounts/{id}</button> <i class="glyphicon glyphicon-flash"></i></p>
+                <p><button id='delete-link' class="btn btn-success">4) DELETE v1/accounts/{id}</button> <i class="glyphicon glyphicon-flash"></i></p>
 
-                <p>NOTE: Use the fields below for the GET/{id}, PUT and DELETE methods.</p>
+                <p><i class="glyphicon glyphicon-flash"></i> These methods require an ID to be entered below.</p>
 
                 <form class="form-horizontal" action="" method="POST">
                   <fieldset>
@@ -98,7 +104,7 @@
                       <!-- Username -->
                       <label class="control-label" for="id">ID</label>
                       <div class="controls">
-                        <input type="text" id="id" name="id" placeholder="" class="input-xlarge" value='' readonly>
+                        <input type="text" id="id" name="id" placeholder="" class="input-xlarge" readonly>
                         <p class="help-block">First name can contain any letters or numbers, without spaces</p>
                       </div>
                     </div>
@@ -107,7 +113,7 @@
                       <!-- Username -->
                       <label class="control-label" for="first_name">First Name</label>
                       <div class="controls">
-                        <input type="text" id="first_name" name="first_name" placeholder="" class="input-xlarge" value='John'>
+                        <input type="text" id="first_name" name="first_name" placeholder="" class="input-xlarge">
                         <p class="help-block">First name can contain any letters or numbers, without spaces</p>
                       </div>
                     </div>
@@ -116,7 +122,7 @@
                       <!-- Username -->
                       <label class="control-label" for="last_name">Last Name</label>
                       <div class="controls">
-                        <input type="text" id="last_name" name="last_name" placeholder="" class="input-xlarge" value='Smith'>
+                        <input type="text" id="last_name" name="last_name" placeholder="" class="input-xlarge">
                         <p class="help-block">Last name can contain any letters or numbers, without spaces</p>
                       </div>
                     </div>
@@ -125,7 +131,7 @@
                       <!-- Username -->
                       <label class="control-label" for="username">Username</label>
                       <div class="controls">
-                        <input type="text" id="username" name="username" placeholder="" class="input-xlarge" value='jsmith12' readonly>
+                        <input type="text" id="username" name="username" placeholder="" class="input-xlarge" readonly>
                         <p class="help-block">Username can contain any letters or numbers, without spaces</p>
                       </div>
                     </div>
@@ -134,7 +140,7 @@
                       <!-- E-mail -->
                       <label class="control-label" for="email">E-mail</label>
                       <div class="controls">
-                        <input type="text" id="email" name="email" placeholder="" class="input-xlarge" value='jsmith12@gmail.com'>
+                        <input type="text" id="email" name="email" placeholder="" class="input-xlarge">
                         <p class="help-block">Please provide your E-mail</p>
                       </div>
                     </div>
