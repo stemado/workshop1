@@ -121,7 +121,7 @@ Topics for our next workshop(s)
 - Using Postman to test API methods locally
 - Use of free SSL provided by Heroku to secure my app using https as well as SSL adon-ons provided by Heroku to secure my own domain.
 - Use of Apigee to proxy our API endpoints (security, throttling, etc.)
-
+- Use of the async Node module to avoid "callback hell"
 
 
 
