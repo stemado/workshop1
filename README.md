@@ -115,11 +115,11 @@ Topics for our next workshop(s)
 
 - Leverage other mongoose features such as limiting the collection properties that are returned (e.g. suppress password from API results)
 - Use ejs and ejs-locals Node modules to create HTML templates that allow us to share and reuse common layouts and partials (i.e. common headers, footers)
-- Use of JWTs (pronounced "jots") to secure your API endpoints and data using JSON Web Tokens. Return an access_token in our register and login API methods and require an access_token for subsequent API calls in order to protect our data.
+- Use of JWTs (pronounced "jots") to secure your API endpoints and data using JSON Web Tokens. Return an access_token in our register and login API methods and require an x-access-token in the request header for subsequent API calls in order to protect our data.
 - Replace jQuery AJAX calls and DOM manipulation with AngularJS
 - Add salt to our password hash
 - Using Postman to test API methods locally
-- Use of free SSL provided by Heroku to secure my app using https as well as SSL adon-ons provided by Heroku to secure my own domain.
+- Use of free SSL provided by Heroku to secure my app using https as well as SSL adon-ons provided by Heroku to secure your own domain.
 - Use of Apigee to proxy our API endpoints (security, throttling, etc.)
 - Use of the async Node module to avoid "callback hell"
 
