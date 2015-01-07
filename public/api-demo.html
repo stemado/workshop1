@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="/images/favicon.ico">
-    
+
     <title>Workshop 1 - API</title>
 
     <!-- Bootstrap Core CSS -->
@@ -130,10 +130,10 @@
 
                     <div class="control-group">
                       <!-- Username -->
-                      <label class="control-label" for="username">Username</label>
+                      <label class="control-label" for="user_name">User Name</label>
                       <div class="controls">
-                        <input type="text" id="username" name="username" placeholder="" class="input-xlarge" readonly>
-                        <p class="help-block">Username can contain any letters or numbers, without spaces</p>
+                        <input type="text" id="user_name" name="user_name" placeholder="" class="input-xlarge" readonly>
+                        <p class="help-block">User name can contain any letters or numbers, without spaces</p>
                       </div>
                     </div>
 
@@ -237,6 +237,7 @@ function getAllRequest() {
             //$("#password").val(data[0].password); //hashed, so useless here...
             $("#first_name").val(data[0].first_name);
             $("#last_name").val(data[0].last_name);
+            $("#email").val(data[0].emails[0].address);
             
 
         },
@@ -269,6 +270,7 @@ function getSpecificRequest(objectid) {
             //$("#password").val(data.password); //hashed, so useless here...
             $("#first_name").val(data.first_name);
             $("#last_name").val(data.last_name);
+            $("#email").val(data.emails[0].address);
 
         },
         error: function (xhr, ajaxOptions, thrownError) {
