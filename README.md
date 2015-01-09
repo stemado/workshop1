@@ -21,22 +21,6 @@ Preparation
 - If using Windows, TortoiseGit is an additional tool that you can use to enable easy right-click features to check in your code and push it to your repository: https://code.google.com/p/tortoisegit/
 
 
-Create a MongoDB database
---------------
-
-- At Compose.io, create a new database called “workshop1”
-- Add a new user to our database (see Admin, Users tab)
-
-Setting up our local project workspace
---------------
-
-We’ll use Git to create a local copy of a repository on GitHub. This will provide a fully functional example of the project that will run locally and we can start with and make enhancements to.
-
-- Create a local project directory as our workspace - (e.g. C:\sites\node.js for PC, documents/dev/nodejs for Mac)
-- Create a fork of https://github.com/djohnsonkc/workshop1 (for more info on forking see: https://help.github.com/articles/fork-a-repo)
-- Git clone https://github.com/your-username/workshop1.git. This will create a new workshop1 folder with the source code.
-- Install Node modules (npm install express, npm install mongoose, npm install moment). Note, this will create a /node_modules directory within your project workspace. These are not included in the repository as they can always be easily reinstalled locally (see .gitignore file in app root).
-
 Things that we will be discussing (not necessarily in this order)
 --------------
 
@@ -56,6 +40,30 @@ Things that we will be discussing (not necessarily in this order)
 - Server-side data validation using mongoose features
 - REST as an architectural style/design pattern and HTTP verbs
 - How NoSQL, MongoDB in particular, differs from a relational database
+
+
+Create a MongoDB database
+--------------
+
+- At Compose.io, create a new database called “workshop1”
+- Add a new user to our database (see Admin, Users tab)
+
+
+Setting up our local project workspace
+--------------
+
+We’ll use Git to create a local copy of a repository on GitHub. This will provide a fully functional example of the project that will run locally and we can start with and make enhancements to.
+
+- Create a local project directory as our workspace - (e.g. C:\sites\node.js for PC, documents/dev/nodejs for Mac)
+- Create a fork of https://github.com/djohnsonkc/workshop1 (for more info on forking see: https://help.github.com/articles/fork-a-repo)
+- Git clone https://github.com/your-username/workshop1.git. This will create a new workshop1 folder with the source code.
+- Install Node modules. Note, the first npm install will create a /node_modules directory within your project workspace. These typically aren't included in the repository as they can be easily reinstalled locally as needed (see .gitignore file in app root).
+	- npm install express
+	- npm install mongoose
+	- npm install moment-
+	- npm install body-parser
+
+
 
 
 Now, let’s open the source code and start writing some of our own code!
