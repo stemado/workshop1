@@ -60,7 +60,7 @@ We’ll use Git to create a local copy of a repository on GitHub. This will prov
 - Install Node modules. Note, the first npm install will create a /node_modules directory within your project workspace. These typically aren't included in the repository as they can be easily reinstalled locally as needed (see .gitignore file in app root).
 	- npm install express
 	- npm install mongoose
-	- npm install moment-
+	- npm install moment
 	- npm install body-parser
 
 
