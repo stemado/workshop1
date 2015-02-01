@@ -1,7 +1,7 @@
 ﻿
 var mongoose = require('mongoose');
 
-var dbURI = 'mongodb://djohnsonkc:changeme123@kahana.mongohq.com:10062/workshop1';
+var dbURI = 'mongodb://stemado:V>/Su8N7K3GqrJ?@dogen.mongohq.com:10001/g2i';
 
 var db = mongoose.connection;
 
