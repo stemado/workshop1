@@ -13,8 +13,8 @@ var organizationSchema = Schema({
 });
 
 var clientSchema = Schema({
-    ee_dob: { type: String, required: true, trim: true },
-    ee_zip: { type: String, required: true, trim: true },
+    client: { type: String, required: true, trim: true },
+
     organization: [organizationSchema],
     created_at: { type: Date, default: Date.now },
     updated_at: { type: Date, default: Date.now }
